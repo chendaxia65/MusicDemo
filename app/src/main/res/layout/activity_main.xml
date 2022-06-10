@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/titleView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:padding="12dp"
+        android:text="Music Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/previousView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:text="上一首"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/playView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/playView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:text="播放"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/nextView"
+        app:layout_constraintStart_toEndOf="@id/previousView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pauseView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:text="暂停"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/nextView"
+        app:layout_constraintStart_toEndOf="@id/previousView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:text="下一首"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/playView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/playModeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:padding="12dp"
+        android:text="顺序"
+        app:layout_constraintBottom_toTopOf="@id/playView"
+        app:layout_constraintEnd_toStartOf="@id/nextView"
+        app:layout_constraintStart_toEndOf="@id/previousView" />
+
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seekBarView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="26dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/playView" />
+
+
+    <TextView
+        android:id="@+id/speedView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onSpeedClick"
+        android:padding="15dp"
+        android:text="0.5X"
+        app:layout_constraintEnd_toStartOf="@id/speedView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekBarView" />
+
+    <TextView
+        android:id="@+id/speedView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onSpeedClick"
+        android:padding="15dp"
+        android:text="0.75X"
+        app:layout_constraintEnd_toStartOf="@id/speedView3"
+        app:layout_constraintStart_toEndOf="@id/speedView1"
+        app:layout_constraintTop_toBottomOf="@id/seekBarView" />
+
+    <TextView
+        android:id="@+id/speedView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onSpeedClick"
+        android:padding="15dp"
+        android:text="1.0X(正常)"
+        app:layout_constraintEnd_toStartOf="@id/speedView4"
+        app:layout_constraintStart_toEndOf="@id/speedView2"
+        app:layout_constraintTop_toBottomOf="@id/seekBarView" />
+
+    <TextView
+        android:id="@+id/speedView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onSpeedClick"
+        android:padding="15dp"
+        android:text="1.25X"
+        app:layout_constraintEnd_toStartOf="@id/speedView5"
+        app:layout_constraintStart_toEndOf="@id/speedView3"
+        app:layout_constraintTop_toBottomOf="@id/seekBarView" />
+
+    <TextView
+        android:id="@+id/speedView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onSpeedClick"
+        android:padding="15dp"
+        android:text="1.5X"
+        app:layout_constraintEnd_toStartOf="@id/speedView6"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@id/speedView4"
+        app:layout_constraintTop_toBottomOf="@id/seekBarView" />
+
+    <TextView
+        android:id="@+id/speedView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onSpeedClick"
+        android:padding="15dp"
+        android:text="2.0X"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/speedView5"
+        app:layout_constraintTop_toBottomOf="@id/seekBarView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
